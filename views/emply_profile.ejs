@@ -1,0 +1,97 @@
+
+<link rel="stylesheet" href="/css/profile.css">
+
+<div class="outer-container">
+
+  <%if(locals.emply){%>
+
+  
+    <div class="heading-elements">
+      <h3><a href="/interview/page">Click here to allocate interviews </a></h3>
+    </div>
+
+    <%if(locals.old_student_list){%>
+
+      
+        
+      <div class="outer-interview-list-heading">
+
+        <div class="inner-interview-list-heading">
+
+        <div class="inside-inner-interview-list-heading">
+          <h3>Student's name </h3>
+        </div>
+
+        <div class="inside-inner-interview-list-heading">
+          <h3> Course Name </h3>
+        </div>
+
+        <div class="inside-inner-interview-list-heading">
+          <h3> Course Score </h3>
+        </div>
+
+        <div class="inside-inner-interview-list-heading">
+          <h3> Status</h3>
+        </div>
+
+        <div class="inside-inner-interview-list-heading">
+          <h3>Eligible for Interviews</h3>
+        </div>
+
+      </div>
+    </div>
+
+
+     
+      <%for(let oldStudentsList_details of old_student_list){%>
+      
+        <div class="outer-interview-list">
+          
+
+          <div class="interview-list">
+          
+            
+
+            <div class="inner-interview-list">
+              <span>
+                <%=oldStudentsList_details.stdname%>
+              </span>
+
+            </div>
+
+            <div class="inner-interview-list">
+              <span>
+                <%=oldStudentsList_details.course%>
+              </span>
+
+            </div>
+
+
+            <div class="inner-interview-list">
+              <span>
+                <%=oldStudentsList_details.coursescore%>
+              </span>
+
+            </div>
+
+            <div class="inner-interview-list">
+              <span>
+                <%=oldStudentsList_details.status%>
+              </span>
+
+            </div>
+
+            <div class="inner-interview-list">
+              <span>
+                <%=oldStudentsList_details.eligibleforinterview%>
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+        <%}%>
+          <%}%>
+            <%}%>
+
+</div>

@@ -1,0 +1,148 @@
+<link rel="stylesheet" href="/css/home.css">
+<hr>
+  <% if(locals.emply){%>
+  
+  <div class="sub-heading">
+    <h3> Add New Students</h3>
+  </div>
+ 
+  
+    <div class=" form">
+      <form action="/students/create" id="new-std" method="post">
+
+        <input type="text" name="stdname" placeholder="Student Name" required>
+        <input type="text" name="college" placeholder="College Name" required>
+        <input type="text" name="batch" placeholder="Batch" required>
+        
+
+        
+        
+        <select name="course" id="course_id" required>
+          <option value="">Select Course</option>
+          <option value="DSA">DSA</option>
+          <option value="WebDev">WebDev</option>
+          <option value="React">React</option>
+        </select>
+
+        <select name="coursescore" id="coursescore_id" required>
+          <option value="">Course Score</option>
+          <option value="Nill">Nill</option>
+          <option value="75%">75%</option>
+          <option value="85%">85%</option>
+          <option value="95%">95%</option>
+        </select>
+
+        <select name="status" id="status_id" required>
+          <option value="">Select Status</option>
+          <option value="Not Applicable">Not Applicable</option>
+          <option value="Placed">Placed</option>
+          <option value="Not Placed">Not Placed</option>
+        </select>
+        
+        <select name="eligibleforinterview" id="eligibleforinterview_id" required>
+          <option value="">Select Eligibility for Interviews</option>
+          <option value="Not Eligible">Not Eligible</option>
+          <option value="Eligible">Eligible</option>
+         
+        </select>
+
+        <button type="submit">Add Student </button>
+
+
+      </form>
+    </div>
+    <% if(locals.std){%>
+     
+     
+
+    <div class="outer-student-list-heading">
+
+      <div class="inner-student-list-heading"> 
+
+      <div class="inside-inner-student-list-heading">
+          <h3>Student's name </h3>
+      </div>
+
+      <div class="inside-inner-student-list-heading">
+          <h3> College Name </h3>
+      </div>
+
+      <div class="inside-inner-student-list-heading">
+          <h3> Batch </h3>
+      </div>
+
+      <div class="inside-inner-student-list-heading">
+          <h3> Course Name</h3>
+      </div>
+      
+      <div class="inside-inner-student-list-heading">
+          <h3> Course Score</h3>
+      </div>
+
+       
+      <div class="inside-inner-student-list-heading">
+        <h3> Status</h3>
+    </div>
+     
+     <div  id="last">
+      <h3>Eligible for Interview</h3>
+     </div>
+ 
+ 
+      </div>
+    </div>
+
+     
+   
+    <div class="outer-student-list-container">
+      
+      
+       <div class="studentlist-container"> 
+
+        <%for(let std_details of std){%>
+          <div class="inner-studentlist-container">
+
+            <div class="studentdetails">
+              <%=std_details.stdname%>
+            </div>
+          
+            <div  class="studentdetails">
+              <%=std_details.college%>
+            </div>
+              
+            <div class="studentdetails">
+              <%=std_details.batch%>
+            </div>
+
+            <div  class="studentdetails">
+              <%=std_details.course%>
+            </div>
+             
+            <div  class="studentdetails">
+              <%=std_details.coursescore%>
+            </div>
+
+            <div class="studentdetails">
+              <%=std_details.status%>
+            </div>
+            
+            <div class="studentdetails">
+              <%=std_details.eligibleforinterview%>
+            </div>
+
+            <div class="studentdetails">
+              <a href="/students/destroy/?id= <%= std_details._id%>">Remove</a>
+            </div>
+
+          </div>
+        <%}%>
+        
+       </div>
+    <%}%>
+  </div>
+        <div  class="signout">
+          <%} else {%>
+            <p> <a href="/employees/signup"> sign up</a></p>
+            <p> <a href="/employees/signin"> sign in </a></p>
+          <%}%>
+        </div>

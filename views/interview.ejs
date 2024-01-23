@@ -1,0 +1,117 @@
+<link rel="stylesheet" href="/css/interview.css">
+<div class="outer-container">
+
+    <div class="heading">
+        <h3>Allocate Interview to Students</h3>
+    </div>
+
+
+
+
+    <div class="form">
+
+        <%if(locals.emply){%>
+
+            <form action="/interview/create" method="post">
+
+                <input type="text" name="interviewee" placeholder="Interviewee Name" required>
+                <input type="text" name="company" placeholder="Company Name" required>
+                <input type="date" name="date" placeholder="Interview date" required>
+
+
+                <select name="result" id="result" required>
+                    <option value="">Status</option>
+                    <option value="on hold">on hold</option>
+                    <option value="Pass">Pass</option>
+                    <option value="Fail">Fail</option>
+                    <option value="did not Attempt">didn't Attempt</option>
+                </select><br><br>
+
+                <button type="submit">Assign Interview</button>
+
+            </form>
+    </div>
+
+
+    <%if(locals.interviewl_ist){%>
+
+        
+
+        <div class="outer-interview-list-heading">
+
+            <div class="inner-interview-list-heading">
+                <div class="inside-inner-interview-list-heading">
+                    <h3>Student's name </h3>
+                </div>
+
+                <div class="inside-inner-interview-list-heading">
+                    <h3> Company Name </h3>
+                </div>
+
+                <div class="inside-inner-interview-list-heading">
+                    <h3> Interview date </h3>
+                </div>
+
+                <div class="inside-inner-interview-list-heading">
+                    <h3> Interview result </h3>
+                </div>
+                
+                <div class="inside-inner-interview-list-heading">
+                    <h3> Mark the esult</h3>
+                </div>
+           
+
+            </div>
+         </div>      
+
+
+               
+         <%for(let interview_details of interviewl_ist){%>
+                    <div class="outer-interview-list">
+                            
+                       
+            
+                        <div class="interview-list">
+                        
+                          
+                            <div class="inner-interview-list">
+                                <span><%=interview_details.interviwee%></span>
+
+                            </div>
+
+                            <div class="inner-interview-list">
+                                <span><%=interview_details.company%></span>
+
+                            </div>
+
+                            <div class="inner-interview-list">
+
+                                <span><%= new Date(interview_details.date).toISOString().split('T')[0] %></span>
+                            </div>
+
+                            <div class="inner-interview-list">
+                            <span><%=interview_details.result%></span>
+
+                            </div>
+
+                            <div class="inner-interview-list">
+
+                                <form action="/interview/markresult" method="post">
+                                    <input type="hidden" name="stdref" value="<%=interview_details.stdref%>">
+                                    <select name="mark">
+                                        <option value="">select</option>
+                                        <option value="on hold">on hold</option>
+                                        <option value="Pass">Pass</option>
+                                        <option value="Fail">Fail</option>
+                                        <option value="didn't Attempt">didn't Attempt</option>
+                                    </select>
+                                    <button type="submit">mark</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <%}%>
+                        <%}%>
+                            <%}%>
+</div>

@@ -1,0 +1,95 @@
+body
+{
+    background-color:rgba(216, 112, 147, 0.466);
+}
+
+ul
+{
+    display: flex;
+    justify-content:space-between; 
+}
+.outer-container
+{
+    width: 100%;
+    /* min-height :400px; */
+     background-color:rgba(216, 112, 147, 0.253);
+}
+.outer-interview-list-heading
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: .5%;
+    /* background-color:rgba(240, 48, 48, 0.664); */
+}
+
+.inner-interview-list-heading
+{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin-top: .5%;
+    background-color: #3671acf8;
+}
+
+.inside-inner-interview-list-heading
+{
+    text-align:center;
+    width: 22%;
+}
+
+
+
+ .outer-interview-list
+{
+    width: 100%;
+    display: flex;
+    justify-content: center
+
+}
+.interview-list
+{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: .5%;
+    box-sizing: border-box;
+    background-color: aliceblue;
+}
+.inner-interview-list
+{
+    
+    width: 22%;
+    font-size: 20px;
+   font-weight:520;
+    
+}
+
+.heading-elements
+{
+    width: 100%;
+    text-align: center;
+
+}
+.heading-elements h3 a
+{
+   background-color: rgba(128, 128, 128, 0.61);
+   border-radius: 3px;
+} 
+
+.heading-elements h3 a:hover
+{
+   background-color: rgb(128, 128, 128);
+   border-radius: 3px;
+} 
+
+.heading-elements a 
+{
+   text-decoration: none;
+   color: black;
+
+}
+.heading-elements a :hover
+{
+    background-color: rgba(128, 128, 128, 0.329);
+}

@@ -1,0 +1,130 @@
+<style>
+       .container {
+              width: 100%;
+              background-color: #2C3E50;
+              display: flex;
+              justify-content: space-between;
+       }
+
+       .inner-right-container {
+              width: 20%;
+              display: flex;
+              gap: .5%;
+              margin-left: .5%;
+              height: 50px;
+       }
+
+       .inner-mid-container
+       {
+              width: 30%;  
+              gap: .5%;
+              height: 50px; 
+       }
+
+       .inner-left-container {
+              width: 20%;
+              display: flex;
+              gap: .5%;
+              height: 50px;
+       }
+
+       .homelink {
+              width: 30%;
+              text-align: center;
+              font-weight: 500;
+
+       }
+
+       .profilelink {
+              width: 70%;
+              text-align: center;
+              font-weight: 500;
+
+       }
+
+
+
+       .username-container {
+              background-color: #4286f400;
+              /* Google Blue */
+              width: 70%;
+              color: white;
+
+       }
+
+       .signout-container {
+              width: 30%;
+
+              color: white;
+              margin-right: 2%;
+       }
+       .inner-mid-container a
+       {
+              text-decoration: none;
+              color: white;
+       
+       }
+       .inner-mid-container h4 a:hover
+       {
+              background-color: #f8111d;
+       }
+
+       .homelink a {
+              text-decoration: none;
+              color: white;
+       }
+
+       .profilelink a {
+              text-decoration: none;
+              color: white;
+       }
+
+       .signout-container a {
+              text-decoration: none;
+              color: white;
+       }
+</style>
+
+
+<div class="container">
+
+       <% if(locals.emply ){%>
+              <div class="inner-right-container">
+
+                     <div class="homelink">
+                            <h4>
+                                   <a href="/">Home</a>
+                            </h4>
+                     </div>
+
+                     <div class="profilelink">
+                            <h4>
+                                   <a href="/employees/profile" target="_blank">Profile</a>
+                            </h4>
+                     </div>
+
+              </div>
+
+              <div class="inner-mid-container">
+                     <h4>
+                            <a href="/download-csv">Click Here to Download the Student's Data</a>
+                     </h4>
+
+              </div>
+
+              <div class="inner-left-container">
+
+                     <div class="username-container">
+                            <p>
+                                   <%=emply.name%>
+                            </p>
+                     </div>
+
+                     <div class="signout-container">
+                            <p> <a href="/employees/destroysession"> Sign Out </a></p>
+                     </div>
+
+              </div>
+
+              <%}%>
+</div>
