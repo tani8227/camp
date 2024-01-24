@@ -61,7 +61,7 @@ module.exports.create= async function(req, res)
     const emply= await Emply.findOne({email: req.body.email});
     if(emply)
     {
-        req.flash('error', " employee is  already existed ")
+        req.flash('error', " employee is  already existed !!!")
         return res.redirect('/employees/signin');
     }else
     {
@@ -75,12 +75,12 @@ module.exports.create= async function(req, res)
             if(emply)
             { 
                 console.log("emply is created");
-                req.flash('success', " employee is  created ")
+                req.flash('success', " employee is  created !!!")
                 return res.redirect('/employees/signin')
 
             }else
             { 
-                req.flash('error', " error in creating employee")
+                req.flash('error', " error in creating employee !!!")
                 console.log("error in creating emply");
             }
     }
@@ -91,7 +91,7 @@ module.exports.create= async function(req, res)
 
 module.exports.createSession= async function(req , res)
 {
-        req.flash('success', " loged in successfully")
+        req.flash('success', " loged in successfully !!!")
 
         // console.log(req.flash('success'));
       return res.redirect('/');
@@ -101,21 +101,21 @@ module.exports.createSession= async function(req , res)
 module.exports.destroySession= async function(req, res)
 {
     
-    req.flash('success', " loged out successfully")
+    req.flash('success', " loged out successfully !!!" )
     //  console.log(req.flash('success'));
     
  req.logout(function(err)
  {
     if(err)
     {
-        console.log("error in logging out ")
+        console.log("error in logging out !!!")
+        req.flash('error', "error in logging out !!!");
+        return res.redirect('back')
     }
-    else
-    {
+   
       
-        
+        req.flash('success', "logged out successfully !!!");
         return res.redirect('/');
-    }
  })
 
 

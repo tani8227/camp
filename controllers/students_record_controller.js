@@ -27,12 +27,12 @@ module.exports.create= async  function(req, res)
         //    console.log(std.);
        
        
-              req.flash('success', "student is created successfully")
+              req.flash('success', "student is created successfully !!!")
               return res.redirect('back');
          }
          else
          { 
-             req.flash('error', " error in creating student")
+             req.flash('error', " error in creating student !!!")
             return res.redirect('back');
          }
 }
@@ -65,11 +65,12 @@ module.exports.destroy= async function(req, res)
            const delete_std= await Std.findByIdAndDelete(id);
            if(delete_std){ 
 
-            req.flash('success', " student deleted ")
+            req.flash('success', " student deleted !!!")
             console.log("deleted")
            return res.redirect('/');
            }else
            {
+            req.flash('error', " error in deleting the student !!!")
             console.log("not deleted")
            }
       }else
@@ -84,7 +85,8 @@ module.exports.destroy= async function(req, res)
   {
     // console.log(id);
     console.error(err);
-    return res.status(500).send('Error');
+    req.flash('error', " student not found !!!")
+    return res.redirect('back');
   } 
 }
 

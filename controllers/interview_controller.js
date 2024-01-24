@@ -35,7 +35,8 @@ module.exports.create = async function (req, res) {
 
             // console.log(Student);
 
-            if (Student) {
+            if (Student) 
+            {
                 // console.log(Student.id);
                 // console.log(Student.stdname);
                 // console.log(Student.coursescore);
@@ -55,28 +56,29 @@ module.exports.create = async function (req, res) {
 
                 if (!Inverviewcreated) {
                     // console.log("interview not created");
-                    req.flash('error', "error in creating the interview ")
+                    req.flash('error', "error in creating the interview !!!")
                     return res.redirect('back')
                 } else {
                     // console.log("interview  created");
-                    req.flash('success', " interview not created successfully ")
+                    req.flash('success', " interview not created successfully !!!")
                     return res.redirect('back')
                 }
             }
             else {
-                req.flash('error', "student does not existed")
+                req.flash('error', "student does not existed !!!")
                 
                 return res.redirect('back')
             }
         }
         {
+            req.flash('error', "user is unauthorized !!!")
             return res.redirect('/employees/signin');
         }
     }
     catch (err) {
         console.log("error 56 58in creating the interview");
         
-        req.flash('error', "student is not eligible for interview")
+        req.flash('error', "student is not eligible for interview !!!")
         return res.redirect('back')
     }
 }
@@ -134,7 +136,7 @@ module.exports.markinterviewresult= async function(req, res)
 
                         if(update_Student){ 
                                 //   console.log("updated student");  
-                                req.flash('success', " student marked successfully ")
+                                req.flash('success', " student marked successfully !!!")
                         }
                         
                         
@@ -146,15 +148,15 @@ module.exports.markinterviewresult= async function(req, res)
             }else
             {
                 console.log("error in updating"); 
-                req.flash('error', " error in marked ")
-                return res.status(500).send('error in updating');  
+                req.flash('error', " error in marked !!!")
+                return res.redirect('back');  
             }
             
         }else
         {
             console.log("student not found ");
-            req.flash('error', "student not found ")
-            return res.status(500).send('student not found');  
+            req.flash('error', "student not found !!!")
+            return res.redirect('back');   
         }
         
     }
