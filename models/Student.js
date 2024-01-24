@@ -46,6 +46,13 @@ const StudentSchema= new mongoose.Schema(
             type:mongoose.Schema.Types.ObjectId,
             ref:'Emply',
         },
+
+        std_uid:
+        {
+            type:String,
+            
+        
+        }
        
     },
     {

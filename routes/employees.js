@@ -10,7 +10,7 @@ router.post('/create', employController.create);
 router.post('/session',passport.authenticate(
      'local',
      {
-        failureRedirect:'employees/signin',
+        failureRedirect:'/employees/signin',
      }
     ), employController.createSession);
     

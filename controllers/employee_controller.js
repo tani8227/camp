@@ -61,30 +61,48 @@ module.exports.create= async function(req, res)
     const emply= await Emply.findOne({email: req.body.email});
     if(emply)
     {
-        return res.redirect('back');
+        req.flash('error', " employee is  already existed ")
+        return res.redirect('/employees/signin');
     }else
     {
-        Emply.create(
+      const emply = await  Emply.create(
             {
                name:req.body.name,
                email:req.body.email,
                password:req.body.password,   
             });
-          return res.redirect('/employees/signin')
+
+            if(emply)
+            { 
+                console.log("emply is created");
+                req.flash('success', " employee is  created ")
+                return res.redirect('/employees/signin')
+
+            }else
+            { 
+                req.flash('error', " error in creating employee")
+                console.log("error in creating emply");
+            }
     }
 }
 
 
 // create the session for the emply to kept the cookie 
 
-module.exports.createSession=  function(req , res)
+module.exports.createSession= async function(req , res)
 {
+        req.flash('success', " loged in successfully")
+
+        // console.log(req.flash('success'));
       return res.redirect('/');
 }
 
 // logout the user or destroyed the session for user 
-module.exports.destroySession= function(req, res)
+module.exports.destroySession= async function(req, res)
 {
+    
+    req.flash('success', " loged out successfully")
+    //  console.log(req.flash('success'));
     
  req.logout(function(err)
  {
@@ -95,6 +113,7 @@ module.exports.destroySession= function(req, res)
     else
     {
       
+        
         return res.redirect('/');
     }
  })

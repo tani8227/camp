@@ -20,11 +20,14 @@ module.exports.home = async function (req, res) {
                     std: std,
                     title: "home"
                 });
-        } else {
-            return res.render('home');
+        } 
+        
+        else {
+            return res.redirect('back');
         }
-    } else {
-        return res.redirect('/employees/signin');
+    } else 
+    {
+        return res.render('home');
     }
 }
 
@@ -75,7 +78,7 @@ module.exports.downloadCSV = async function (req, res) {
                     // console.log(csvStream)
                     csvData.forEach((data) => csvStream.write(data));
                     csvStream.end();
-
+                    
                     return res.download('students.csv');
                 } 
                 else 
@@ -86,6 +89,7 @@ module.exports.downloadCSV = async function (req, res) {
             catch (error) 
             {
                 console.error('Error generating CSV:', error);
+                req.flash('error', " Error generating CSV ")
                 return res.render('home');
             }
     }

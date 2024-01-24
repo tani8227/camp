@@ -6,7 +6,8 @@ const passportLocal = require('./config/passport_local');
 const path = require('path');
 const db =require('./config/mongoose')
 const MongoStore = require('connect-mongo');
-//const { default: mongoose } = require('mongoose');
+const flash = require('connect-flash');
+const customMware= require('./config/middleware');
 require('dotenv').config();
 const port = process.env.PORT;
 const app = express();
@@ -34,13 +35,17 @@ app.use(session({
         maxAge: 100 * 60 * 1000, // Corrected maxAge value
     },
     store: new MongoStore({
-        mongoUrl: process.env.MONGO_URL, 
+        mongoUrl: process.env.MONGO_URL,
         autoRemove:'disabled',
     })
 }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
+
+
+app.use(flash())
+app.use(customMware.setflash);
 
 // Set view engine and views path
 app.set('view engine', 'ejs');

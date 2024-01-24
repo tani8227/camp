@@ -8,6 +8,21 @@ body
 {
     background-color:rgba(216, 112, 147, 0.466);
  }
+
+ .heading
+ {
+    width: 100%;
+    text-align: center;
+    background-color: rgba(216, 112, 147, 0.123);
+     
+ }
+
+
+
+
+
+
+
 .outer-container
 {
     width: 100%;
@@ -74,4 +89,19 @@ body
     font-size: 20px;
    font-weight:520;
     
+}
+
+.no-list
+{
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+     color: rgb(43, 41, 41);
+  
+  font-weight: bold;
+  font-size: large;
+}
+.no-list span 
+{
+    background-color: rgb(255, 248, 156);
 }

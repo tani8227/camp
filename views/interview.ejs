@@ -5,7 +5,7 @@
         <h3>Allocate Interview to Students</h3>
     </div>
 
-
+       
 
 
     <div class="form">
@@ -13,7 +13,7 @@
         <%if(locals.emply){%>
 
             <form action="/interview/create" method="post">
-
+                <input type="text" name="stduid" placeholder="Interview Id" required>
                 <input type="text" name="interviewee" placeholder="Interviewee Name" required>
                 <input type="text" name="company" placeholder="Company Name" required>
                 <input type="date" name="date" placeholder="Interview date" required>
@@ -33,7 +33,7 @@
     </div>
 
 
-    <%if(locals.interviewl_ist){%>
+    <%if(locals.interviewl_ist.length>0){%>
 
         
 
@@ -73,7 +73,8 @@
             
                         <div class="interview-list">
                         
-                          
+        
+
                             <div class="inner-interview-list">
                                 <span><%=interview_details.interviwee%></span>
 
@@ -112,6 +113,11 @@
                         </div>
                     </div>
                     <%}%>
-                        <%}%>
-                            <%}%>
+              <%}else{%>
+              <div class="no-list">
+                <span>Interview List not Available</span>
+              </div>
+              <%}%>
+
+   <%}%>
 </div>

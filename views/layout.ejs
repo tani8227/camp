@@ -5,16 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title><%=locals.title%></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
     <link rel="stylesheet" href="/css/layout.css">
     <%- style %>
 </head>
 <body>
       
        <%-include('_header');%>
+      
        <%-body %>
        <%-include('_footer');%>
      
       
        <%- script %>
+
+
+       <script>
+         
+         
+         <% if(flash.success && flash.success.length>0 ){ %>
+            new Noty({
+                    
+                    theme:'relax',
+                    type:"success",
+                    text: "<%= flash.success%>",
+                    timeout:1500,
+                    layout:"topRight",
+
+
+                    }).show();
+                     <%}%>
+
+
+         <% if(flash.error && flash.error.length>0 ){ %>
+            new Noty({
+                    
+                    theme:'relax',
+                    type:"error",
+                    text: "<%= flash.error%>",
+                    timeout:1500,
+                    layout:"topRight",
+
+
+                    }).show();
+                     <%}%>
+       </script>
 </body>
 </html>

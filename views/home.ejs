@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="/css/home.css">
-<hr>
+
   <% if(locals.emply){%>
-  
-  <div class="sub-heading">
-    <h3> Add New Students</h3>
-  </div>
+    <hr>
+      <div class="sub-heading">
+        <h3> Add New Students</h3>
+      </div>
  
   
     <div class=" form">
@@ -51,7 +51,7 @@
 
       </form>
     </div>
-    <% if(locals.std){%>
+    <% if(locals.std.length>0){%>
      
      
 
@@ -138,11 +138,20 @@
         <%}%>
         
        </div>
-    <%}%>
+    <%}else {%>
+      <div >
+        <h3 class="no-list "> Student's List not Available</h3>
+      </div>
+        
+      <%}%>
   </div>
-        <div  class="signout">
+        
+        
           <%} else {%>
-            <p> <a href="/employees/signup"> sign up</a></p>
-            <p> <a href="/employees/signin"> sign in </a></p>
+            <div  class="signout">
+              <h1>WELCOME TO HOME PAGE</h1>
+            <button> <a href="/employees/signup"> sign up</a></button>
+          <button> <a href="/employees/signin"> sign in </a></button>
+         </div>
           <%}%>
-        </div>
+     

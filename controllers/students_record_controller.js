@@ -1,10 +1,13 @@
 
 const Std= require('../models/Student')
 const Emply= require('../models/emply')
+
 module.exports.create= async  function(req, res)
 {
- 
-   
+  
+  const stdlength = await Std.countDocuments({});
+  //  console.log(stdlength);
+  
    const std= await  Std.create(
         {
           stdname:req.body.stdname,
@@ -15,12 +18,23 @@ module.exports.create= async  function(req, res)
           status:req.body.status,
           eligibleforinterview:req.body.eligibleforinterview,
           emplyref:req.user._id,
+          std_uid:stdlength+1,
+       
           
-        });
+        })
+
          if(std){ 
         //    console.log(std.);
+       
+       
+              req.flash('success', "student is created successfully")
+              return res.redirect('back');
          }
-        return res.redirect('/');
+         else
+         { 
+             req.flash('error', " error in creating student")
+            return res.redirect('back');
+         }
 }
 
 
@@ -50,6 +64,8 @@ module.exports.destroy= async function(req, res)
             
            const delete_std= await Std.findByIdAndDelete(id);
            if(delete_std){ 
+
+            req.flash('success', " student deleted ")
             console.log("deleted")
            return res.redirect('/');
            }else
