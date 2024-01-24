@@ -27,7 +27,7 @@ app.set('layout extractScripts', true);
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(session({
-    name: "camp",
+    name: "Student Management System",
     secret:process.env.SECRET,
     resave: false,
     saveUninitialized: false,
