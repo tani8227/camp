@@ -93,3 +93,18 @@ ul
 {
     background-color: rgba(128, 128, 128, 0.329);
 }
+
+.no-list
+{
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+     color: rgb(43, 41, 41);
+  
+  font-weight: bold;
+  font-size: large;
+}
+.no-list span 
+{
+    background-color: rgb(255, 248, 156);
+}

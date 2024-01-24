@@ -6,13 +6,13 @@
   <%if(locals.emply){%>
 
   
-    <div class="heading-elements">
-      <h3><a href="/interview/page" target="_blank">Click here to allocate interviews </a></h3>
-    </div>
+    
 
-    <%if(locals.old_student_list){%>
+    <%if(locals.old_student_list.length>0){%>
 
-      
+      <div class="heading-elements">
+        <h3><a href="/interview/page" target="_blank">Click here to allocate interviews </a></h3>
+      </div>
         
       <div class="outer-interview-list-heading">
 
@@ -101,7 +101,11 @@
           </div>
         </div>
         <%}%>
-          <%}%>
+          <%}else{%>
+            <div class="no-list">
+              <span>Interview List not Available</span>
+            </div>
             <%}%>
+<%}%>
 
 </div>
