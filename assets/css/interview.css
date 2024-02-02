@@ -1,14 +1,12 @@
-ul
-{
-    display: flex;
-    justify-content:space-between; 
-}
+
 
 body
 {
     background-color:rgba(216, 112, 147, 0.466);
  }
 
+
+/* 
  .heading
  {
     width: 100%;
@@ -17,17 +15,11 @@ body
      
  }
 
-
-
-
-
-
-
+ 
 .outer-container
 {
     width: 100%;
-    /* min-height :400px; */
-     /* background-color:rgba(216, 112, 147, 0.466); */
+    
 }
 
 .outer-interview-list-heading
@@ -36,7 +28,7 @@ body
     display: flex;
     justify-content: center;
     margin-top: .5%;
-    /* background-color:rgba(240, 48, 48, 0.664); */
+   
 }
 
 
@@ -104,4 +96,4 @@ body
 .no-list span 
 {
     background-color: rgb(255, 248, 156);
-}
+} */
