@@ -85,7 +85,7 @@ module.exports.destroy= async function(req, res)
   {
     // console.log(id);
     console.error(err);
-    req.flash('error', " student not found !!!")
+    req.flash('error', " error in finding student  !!!")
     return res.redirect('back');
   } 
 }

@@ -12,7 +12,7 @@ module.exports.interviewpage = async function (req, res) {
             // console.log("helloppp")
         return res.render('interview',
             {
-                interviewl_ist: interviewlist,
+                interview_list: interviewlist,
                 title:"interview",
 
             });

@@ -1,14 +1,9 @@
 stdname,college,batch,course,coursescore,status,eligibleforinterview
 shiv,tit,2022,DSA,85%,Placed,Eligible
-shiv,tit,2022,DSA,85%,Placed,Eligible
-shiv,tit,2022,WebDev,75%,Not Placed,Eligible
-shiv,tit,2022,DSA,85%,Not Placed,Eligible
-shiv,tit,2022,DSA,75%,Not Placed,Eligible
-shiv,tit,2022,DSA,75%,Not Placed,Eligible
-shiv,tit,2022,DSA,75%,Not Placed,Eligible
-shiv,tit,2022,WebDev,75%,Not Placed,Eligible
-shiv,tit,2022,WebDev,75%,Not Placed,Eligible
-shiv,tit,2022,WebDev,75%,Not Placed,Eligible
-shiv,tit,2022,WebDev,75%,Not Placed,Eligible
-shiv,tit,2022,WebDev,75%,Not Placed,Eligible
-shiv,tit,2022,WebDev,75%,Not Placed,Eligible
+yash,jk,2024,WebDev,75%,Placed,Eligible
+abhi,jk,2022,React,95%,Placed,Eligible
+abhi,LN,2023,DSA,75%,Placed,Eligible
+anuj,tit,2024,DSA,Nill,Not Applicable,Not Eligible
+aman,jk,2024,WebDev,Nill,Not Applicable,Not Eligible
+piyush,LN,2022,WebDev,85%,Placed,Eligible
+tushar,tit,2023,React,75%,Placed,Eligible

@@ -2,7 +2,7 @@ body
 {
     background-color:rgba(216, 112, 147, 0.466);
 }
-
+/* 
 ul
 {
     display: flex;
@@ -11,7 +11,7 @@ ul
 .outer-container
 {
     width: 100%;
-    /* min-height :400px; */
+  
      background-color:rgba(216, 112, 147, 0.253);
 }
 .outer-interview-list-heading
@@ -20,7 +20,7 @@ ul
     display: flex;
     justify-content: center;
     margin-top: .5%;
-    /* background-color:rgba(240, 48, 48, 0.664); */
+  
 }
 
 .inner-interview-list-heading
@@ -93,7 +93,7 @@ ul
 {
     background-color: rgba(128, 128, 128, 0.329);
 }
-
+*/
 .no-list
 {
     margin-top: 20px;
@@ -107,4 +107,4 @@ ul
 .no-list span 
 {
     background-color: rgb(255, 248, 156);
-}
+} 
